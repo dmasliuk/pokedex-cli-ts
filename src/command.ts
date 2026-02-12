@@ -1,13 +1,8 @@
 import { helpCommand } from "./command_help.js";
 import { exitCommand } from "./command_exit.js";
+import { CLICommand } from "./state.js";
 
-export type CLIcommand = {
-    name: string;
-    description: string;
-    callback: (commands: Record<string, CLIcommand>) => void;
-}
-
-export function getCommands():Record<string, CLIcommand> {
+export function getCommands():Record<string, CLICommand> {
     return {
         exit: {
             name: "exit",
